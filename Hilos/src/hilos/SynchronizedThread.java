@@ -9,6 +9,6 @@ public class SynchronizedThread extends Thread{
 
     @Override
     public void run(){
-        counter.increaseAndPrint();
+        counter.increaseAndPrint(Thread.currentThread().getName());
     }
 }

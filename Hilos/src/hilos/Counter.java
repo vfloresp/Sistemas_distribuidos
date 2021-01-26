@@ -7,10 +7,13 @@ public class Counter {
         this.count = count;
     }
 
-    public synchronized void increaseAndPrint(){
-        for(int i=0;i<10;i++){
-            count++;
-            System.out.print(count + " ");
+    public  void increaseAndPrint(String hiloId){
+        for(int i=0;i<1000;i++){
+            synchronized (this){
+                count++;
+                System.out.println(count + " "+hiloId);
+            }
+
         }
     }
 }
