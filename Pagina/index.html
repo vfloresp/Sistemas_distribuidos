@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <meta charset="UTF-8" />
+
+        <title>Hola Mundo</title>
+    </head>
+
+    <body>
+        <p>
+            Nombre: <span id="un_nombre"></span> <br />
+            Lugar de nacimiento:<span id="un_lugar"></span><br />
+            Año de nacimiento: <span id="un_anio"></span><br />
+            Otro dato: <span id="un_otro_dato"></span><br />
+        </p>
+        <script>
+            var objetoJSON = {
+                nombre: "Chuchito",
+                lugar: "Casa de Chuchito",
+                anio: 1999,
+                arreglo: ["a", "b", "c"],
+                objeto_interno: {
+                    a1: 1,
+                    a2: 2,
+                },
+            };
+            textoObjectJSON = '{"at1":1,"at2":2}';
+            var otroObjectJSON = JSON.parse(textoObjectJSON);
+            objetoJSON["otrodato"] = "dato sobre Chuchito";
+            document.getElementById("un_nombre").innerHTML = objetoJSON.nombre;
+            document.getElementById("un_lugar").innerHTML = objetoJSON.lugar;
+            document.getElementById("un_anio").innerHTML = objetoJSON.anio;
+            document.getElementById("un_otro_dato").innerHTML = otroObjectJSON.at1;
+        </script>
+    </body>
+</html>
