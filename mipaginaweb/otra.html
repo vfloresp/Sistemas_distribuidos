@@ -1,0 +1,19 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <meta charset="UTF-8"/>
+        <title>Otra</title>
+    </head>
+    <body>
+        <p id="campo"></p>
+        <script>
+            const todosParametros = window.location.search;
+            const parametros = new URLSearchParams(todosParametros);
+            document.write(parametros.get("vacunado"))
+            //alert(parametros.get("vacunado"));
+            //alert(parametros.get("nombre"));
+            //alert(parametros.get("apellido"));
+        </script>
+        
+    </body>
+</html>

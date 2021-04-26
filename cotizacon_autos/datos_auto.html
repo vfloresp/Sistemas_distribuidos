@@ -1,0 +1,78 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Cotizacion de seguros</title>
+</head>
+<body>
+    <h1>Cotizacion de seguros de Auto</h1>
+    <p><strong></trong>Datos personal</strong></p>
+    <p><div id="nom_txt"></div></p>
+    <p><div id="gen_txt"></div></p>
+    <p><div id="edad_txt"></div></p>
+    <p><div id="estado_txt"></div></p>
+    <br>
+    <p><strong>Datos del auto</strong></p>
+    <form class="datos_auto" action="cotizacion.html" method="GET">
+        <label for="marca">Marca:</label>
+        <select id="marca" name="marca">
+            <option value="ch">Chevrolet</option>
+            <option value="ni">Nissan</option>
+        </select><br><br>
+        <label for="mod">Modelo:</label>
+        <input type="text" id="mod"><br><br>
+        <label for="plac">Placas:</label>
+        <input type="text" id="plac"><br><br>
+        <input type="submit" value="Enviar">
+        <input type="reset" value="Limpiar">
+        <div id="hidden_info"></div>
+    </form>
+
+    <script>
+        const params = window.location.search;
+        const urlParams = new URLSearchParams(params);
+        const nom = urlParams.get("nom");
+        const ap = urlParams.get("apell");
+        const gen = urlParams.get("gen");
+        const edad = urlParams.get("edad");
+        const estado = urlParams.get("estado");
+
+        const gen_txt = document.getElementById("gen_txt")
+        let gen_desc = ""
+        if(gen === "0"){
+            gen_desc = "Masculino";
+        }else{
+            gen_desc = "Femenino";
+        }
+        gen_txt.innerText = "Género: " + gen_desc;
+
+        const nom_txt = document.getElementById("nom_txt")
+        let nom_desc = ""
+        if(gen === "0"){
+            nom_desc = "Estimado Sr. "+nom+" "+ap;
+        }else{
+            nom_desc = "Estimada Sra. "+nom+" "+ap;
+        }
+        nom_txt.innerText = nom_desc;
+        
+        const edad_txt = document.getElementById("edad_txt")
+        edad_txt.innerText = "Edad: " + edad;
+        
+        const estado_txt= document.getElementById("estado_txt")
+        let est_desc = ""
+        if(estado === "JAL"){
+            nom_desc = "Jalisco";
+        }else{
+            nom_desc = "Ciudad de México";
+        }
+        estado_txt.innerText = "Estado: " + estado;
+
+        const form = document.getElementById("hidden_info")
+        const input_nom = "<input type='hidden' name='greet' value='"+nom_desc+"'> ";
+        const input_gen = "<input type='hidden' name='gen' value='"+gen_desc+"'> ";
+        const input_est = "<input type='hidden' name='est' value='"+nom_desc+"'> ";
+        form.innerHTML = "<input type='hidden' name='greet' value='"+nom_desc+"'> "
+    </script>
+</body>

@@ -2,54 +2,9 @@
 <html>
     <head>
         <meta charset="UTF-8" />
-        <title>Un título</title>
+        <title>Form</title>
     </head>
     <body>
-        <p>Este es un parrafo</p>
-        <p>Este es otro parrafo</p>
-        <h1>Este es un título</h1>
-        <h6>Este es otro título</h6>
-        <div id="uno">este es un div</div>
-        <span id="dos">este es un span</span>
-        <br>
-        <br>
-        Texto 
-        <hr>
-
-        <table border="2">
-            <tr>
-                <th>
-                    encabezado 1
-                </th>
-                <th>
-                    encabezado 2
-                </th>
-            </tr>
-            <tr>
-                <td>
-                    dato 1
-                </td>
-                <td>
-                    dato 2
-                </td>
-            </tr>
-        </table>
-
-        <ol>
-            <li>a</li>
-            <li>b</li>
-            <li>c</li>
-        </ol>
-        <ul>
-            <li>a</li>
-            <li>b</li>
-            <li>c</li>
-        </ul>
-
-        <img height="100px" src="https://i.ytimg.com/vi/H4JE6XDR6UE/maxresdefault.jpg"/><br>
-        <a href="https://www.youtube.com" target="_self">Vinculo a youtube 1</a><br>
-        <a href="https://www.youtube.com" target="_blank">Vinculo a youtube 2</a><br><br>
-
         <form action="otra.html" method="GET">
             <label for="nombre">Nombre</label><br>
             <input id="nombre" type="text" name="nombre"><br>
@@ -58,6 +13,8 @@
             <label for="color">Elige tu color favorito</label><br><br>
             <label><input type="radio" id="azul" name="color" value="0" checked>Color Azul </label>
             <label><input type="radio" id="rojo" name="color" value="1">Color Rojo</label>
+            <br><br>
+            <label><input type="checkbox" id="vacunado" name="vacunado" value="Si">Vacunado</label>
             <br>
             <h5> Selecciona tu estado de nacimiento</h5>
             <label>Estado: <select id="name" name="estado">
@@ -74,6 +31,5 @@
             <input type="reset" value="Limpiar">
             <input type="button" onClick="fun = ()=>{};" value="Generico" />
         </form>
-
     </body>
 </html>
