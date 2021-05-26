@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <meta charset="UTF-8" />
+        <title>Calculadora de Pensión para Trabajadores Independientes</title>
+    </head>
+    <body>
+        <h1>Calculadora de Pensión para Trabajadores Independientes</h1>
+        <p>Ingresa la siguiente información para conocer tu pensión</p>
+        <br />
+
+        <form action="simuacion" method="POST">
+            {% csrf_token %}
+            <label>Nombre: <input type="text" name="nombre" /></label><br />
+            <label>Edad actual: <input type="text" name="edad_actual" /></label><br />
+            <label>Edad de retiro: <input type="text" name="edad_retiro" /></label><br />
+            <label>Saldo acumulado en la afore: <input type="text" name="saldo_acumulado" /></label
+            ><br />
+            <label>Ahorro mensual esperado: <input type="text" name="ahorro_mensual" /></label
+            ><br />
+            <label for="genero">Género</label><br /><br />
+            <label><input type="radio" id="hombre" name="genero" value="1" checked />Hombre </label>
+            <label><input type="radio" id="mujer" name="genero" value="0" />Mujer</label>
+            <br /><br />
+            <input type="submit" value="Agregar" /><br />
+            <input type="reset" value="Limpiar" />
+        </form>
+    </body>
+</html>
