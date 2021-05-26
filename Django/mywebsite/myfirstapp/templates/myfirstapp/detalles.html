@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <meta charset="utf-8" />
+        <title>Detalles del estudiantes</title>
+    </head>
+    <body>
+        {% if estudiante %}
+        <p>Detalles del estudiante {{estudiante.nombre}} {{estudiante.apellidos}}</p>
+        <p>{{estudiante.edad}}</p>
+        <p>{{estudiante.promedio}}</p>
+        {% if estudiante.foraneo %}
+        <p>foraneo</p>
+        {% else %}
+        <p>local</p>
+        {% endif %}
+        <p>{{estudiante.aspira_a_beca}}</p>
+        <ul>
+        {% for carrera in estudiante.carrera_set.all %}
+            <li>{{carrera.get_tipo}} {{carrera.nombre}}</li>
+        {% endfor%}
+        <ul>
+        {% else %}
+        <p>El estudiante no existe</p>
+        {% endif %}
+    </body>
+</html>

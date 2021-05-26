@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <meta charset="UTF-8" />
+        <title>Este es nuestro index del template</title>
+    </head>
+    <body>
+        <p>Estudiantes inscritos</p>
+        {% if estudiantes %}
+        <ul>
+            {% for estudiante in estudiantes %}
+            <li>
+                <a href="{% url 'myfirstapp:detalles' estudiante.id %}" />
+                {{ estudiante.nombre }} {{estudiante.apellidos}}
+            </li>
+            {% endfor %}
+        </ul>
+        {% else %}
+        <p>No hay estudiantes</p>
+        {% endif %}
+
+        <h1>Forma para agregar estudiante</h1>
+        <p>Datos del estudiante</p>
+        <form action="agrega_estudiante_post" method="POST">
+            {% csrf_token %}
+            <label>Nombre: <input type="text" name="nombre" /></label><br />
+            <label>Apellidos: <input type="text" name="apellidos" /></label><br />
+            <label>Edad: <input type="text" name="edad" /></label><br />
+            <label>Promedio: <input type="text" name="promedio" /></label><br />
+            <label> <input type="checkbox" name="foraneo" value="True" />Foraneo</label><br />
+            <input type="submit" value="Enivar" />
+        </form>
+    </body>
+</html>
